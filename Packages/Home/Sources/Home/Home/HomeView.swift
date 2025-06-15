@@ -21,16 +21,17 @@ struct HomeView: View {
             VStack {
                 Text("<head>")
                 Spacer()
-
                 HStack {
+
                     Button {
 
                     } label: { Image(systemName: "play").padding() }
+
                     Button {
 
                     } label: { Image(systemName: "stop").padding() }
-                }
 
+                }
                 Spacer()
                 Text("<foot>")
             }

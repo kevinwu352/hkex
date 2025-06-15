@@ -1,6 +1,6 @@
 //
 //  SettingsView.swift
-//  Home
+//  Wallet
 //
 //  Created by Kevin Wu on 5/3/25.
 //

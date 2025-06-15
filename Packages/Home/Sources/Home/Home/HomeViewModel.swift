@@ -17,24 +17,4 @@ final class HomeViewModel {
     // deinit {
     //     print("home vm deinit \(dev_obj_addr(self))")
     // }
-
-    var task: Task<Void, Never>?
-
-    func load() {
-        print("load begin")
-        task = Task {
-            do {
-                try await Task.sleep(for: .seconds(5))
-                print("got data")
-            } catch {
-                print("cancelled")
-            }
-        }
-        print("load end")
-    }
-
-    func cancel() {
-        print("cancel")
-        task?.cancel()
-    }
 }

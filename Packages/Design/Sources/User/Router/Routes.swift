@@ -9,9 +9,9 @@ import SwiftUI
 
 public enum Routes {
     // Home
-    case settings
 
     // Market
 
     // Wallet
+    case settings
 }

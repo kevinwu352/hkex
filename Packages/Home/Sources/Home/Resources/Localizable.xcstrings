@@ -7,24 +7,6 @@
     "<head>" : {
 
     },
-    "<L_en>" : {
-
-    },
-    "<L_fr>" : {
-
-    },
-    "<L_none>" : {
-
-    },
-    "<T_dark>" : {
-
-    },
-    "<T_light>" : {
-
-    },
-    "<T_none>" : {
-
-    },
     "home_title" : {
       "localizations" : {
         "en" : {
@@ -37,22 +19,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Maison"
-          }
-        }
-      }
-    },
-    "settings_title" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Settings"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paramètres"
           }
         }
       }

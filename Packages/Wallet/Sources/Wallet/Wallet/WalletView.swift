@@ -52,18 +52,13 @@ struct WalletView: View {
         }
         .navBarBackable(false)
         .navBarTitleView(Text("wallet_title"))
-        .navBarLeadView(
-            NavigationLink(value: Routes.settings) {
-                Image(systemName: "gear")
-                    .padding(.leading)
-            }
-        )
         .navBarTrailView(
             Button {
                 switcher.loggedOut()
             } label: {
                 Image(systemName: "rectangle.portrait.and.arrow.right")
-            }.padding(.trailing)
+                    .padding(.trailing)
+            }
         )
         .applyRoute()
     }
