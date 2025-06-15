@@ -11,7 +11,7 @@ import Factory
 public extension Container {
     @MainActor
     var options: Factory<UserOptions> {
-        self { @MainActor in UserOptions(onDisk: true, user: "") }.cached
+        self { @MainActor in UserOptions(onDisk: true, user: "") }.scope(.session)
     }
 }
 public extension UserOptions {

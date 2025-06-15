@@ -1,5 +1,5 @@
 //
-//  LoginSwitching.swift
+//  LoginSwitcher.swift
 //  Design
 //
 //  Created by Kevin Wu on 4/29/25.

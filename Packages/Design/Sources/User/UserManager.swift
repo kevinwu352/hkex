@@ -1,5 +1,5 @@
 //
-//  UserManaging.swift
+//  UserManager.swift
 //  Design
 //
 //  Created by Kevin Wu on 5/10/25.
@@ -10,8 +10,8 @@ import Factory
 
 public extension Container {
     @MainActor
-    var manager: Factory<UserManaging> {
-        self { @MainActor in UserManagerPh(user: .init()) }.cached
+    var usermg: Factory<UserManaging> {
+        self { @MainActor in UserManagerPh(user: .init()) }.scope(.session)
     }
 }
 
@@ -23,21 +23,21 @@ public protocol UserManaging: Sendable {
 }
 
 @Observable
-public final class UserManagerPh: UserManaging {
-    public init(user: User) {
+final class UserManagerPh: UserManaging {
+    init(user: User) {
         print("[life] manager init [mock]")
         self.user = user
     }
     deinit { print("[life] manager deinit [mock]") }
 
-    public var user: User
+    var user: User
 
-    public func changePhone(_ phone: String) {
+    func changePhone(_ phone: String) {
     }
 
 }
 // extension UserManagerPh: @preconcurrency CustomStringConvertible {
-//     public var description: String {
+//     var description: String {
 //         "manager [mock]"
 //     }
 // }

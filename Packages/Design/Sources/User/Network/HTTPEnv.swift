@@ -10,6 +10,6 @@ import Factory
 
 public extension Container {
     var network: Factory<Networkable> {
-        self { HTTPClient() }.cached
+        self { HTTPClient(token: nil) }.scope(.session)
     }
 }
