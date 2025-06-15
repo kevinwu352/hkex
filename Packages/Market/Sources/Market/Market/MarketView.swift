@@ -27,12 +27,12 @@ struct MarketView: View {
             }
             .listStyle(.plain)
         }
-        .onAppear {
-            print("market appear")
-        }
-        .onDisappear {
-            print("market disappear")
-        }
+        // .onAppear {
+        //     print("market appear")
+        // }
+        // .onDisappear {
+        //     print("market disappear")
+        // }
         .onFirstTask {
             print("market task")
             await vm.getPosts()

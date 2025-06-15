@@ -49,12 +49,12 @@ struct MainView: View {
             }
             .tag(TabBarItem.wallet)
         }
-        .onAppear {
-            print("main appear")
-        }
-        .onDisappear {
-            print("main disappear")
-        }
+        // .onAppear {
+        //     print("main appear")
+        // }
+        // .onDisappear {
+        //     print("main disappear")
+        // }
     }
 }
 

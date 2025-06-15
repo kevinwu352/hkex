@@ -25,10 +25,10 @@ public protocol UserManaging: Sendable {
 @Observable
 final class UserManagerPh: UserManaging {
     init(user: User) {
-        print("[life] manager init [mock]")
+        print("[life] usermg init [mock]")
         self.user = user
     }
-    deinit { print("[life] manager deinit [mock]") }
+    deinit { print("[life] usermg deinit [mock]") }
 
     var user: User
 
@@ -38,6 +38,6 @@ final class UserManagerPh: UserManaging {
 }
 // extension UserManagerPh: @preconcurrency CustomStringConvertible {
 //     var description: String {
-//         "manager [mock]"
+//         "usermg [mock]"
 //     }
 // }

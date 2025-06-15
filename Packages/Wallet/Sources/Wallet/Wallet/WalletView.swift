@@ -41,15 +41,15 @@ struct WalletView: View {
                 Text("<foot>")
             }
         }
-        .onAppear {
-            print("wallet appear")
-        }
-        .onDisappear {
-            print("wallet disappear")
-        }
-        .task {
-            print("wallet task")
-        }
+        // .onAppear {
+        //     print("wallet appear")
+        // }
+        // .onDisappear {
+        //     print("wallet disappear")
+        // }
+        // .task {
+        //     print("wallet task")
+        // }
         .navBarBackable(false)
         .navBarTitleView(Text("wallet_title"))
         .navBarTrailView(

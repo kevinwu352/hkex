@@ -11,10 +11,10 @@ import Design
 @Observable
 public final class UserManager: UserManaging {
     public init(user: User) {
-        print("[life] manager init [\(user.username)]")
+        print("[life] usermg init [\(user.username)]")
         self.user = user
     }
-    deinit { print("[life] manager deinit") }
+    deinit { print("[life] usermg deinit") }
 
     public var user: User
 
@@ -24,6 +24,6 @@ public final class UserManager: UserManaging {
 }
 // extension UserManager: @preconcurrency CustomStringConvertible {
 //     public var description: String {
-//         "manager [\(user.username)]"
+//         "usermg [\(user.username)]"
 //     }
 // }

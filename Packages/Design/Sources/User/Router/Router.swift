@@ -18,9 +18,9 @@ public extension Container {
 @MainActor
 @Observable
 public final class Router {
-    public init() {
-        // print("[life] router init [\(dev_obj_addr(self))]")
-    }
+    // init() {
+    //     print("[life] router init [\(dev_obj_addr(self))]")
+    // }
     // deinit { print("[life] router deinit [\(dev_obj_addr(self))]") }
 
     public var current: TabBarItem = .home

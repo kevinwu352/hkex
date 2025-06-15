@@ -37,14 +37,14 @@ struct HomeView: View {
             }
         }
         .onAppear {
-            print("home appear")
+            // print("home appear")
         }
-        .onDisappear {
-            print("home disappear")
-        }
-        .task {
-            print("home task")
-        }
+        // .onDisappear {
+        //     print("home disappear")
+        // }
+        // .task {
+        //     print("home task")
+        // }
         .navBarBackable(false)
         .navBarTitleView(Text("home_title"))
     }
