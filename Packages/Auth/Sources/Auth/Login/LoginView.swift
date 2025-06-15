@@ -22,10 +22,10 @@ struct LoginView: View {
 
                 HStack {
                     Button {
-                        Task { await vm.login(id: 1) }
+                        vm.login(id: 1)
                     } label: { Image(systemName: "01.square.fill").padding() }
                     Button {
-                        Task { await vm.login(id: 2) }
+                        vm.login(id: 2)
                     } label: { Image(systemName: "02.square.fill").padding() }
                 }
                 .font(.largeTitle)

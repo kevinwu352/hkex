@@ -74,6 +74,7 @@ final class TaskViewModel {
             do {
                 try await Task.sleep(for: .seconds(5))
                 print("run1 done \(self?.data ?? "")")
+                // print("run1 done \(data)")
             } catch {
                 print("run1 cancelled")
             }
