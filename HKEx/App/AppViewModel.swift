@@ -81,13 +81,13 @@ final class AppViewModel {
         if oldLogged != newLogged {
             if let new = new {
                 // Container.shared.router
-                Container.shared.network.register { HTTPClient(token: new.token) }
                 Container.shared.options.register { @MainActor in UserOptions(onDisk: true, user: new.username) }
+                Container.shared.network.register { HTTPClient(token: new.token) }
                 Container.shared.usermg.register { @MainActor in UserManager(user: new) }
             } else {
                 // Container.shared.router
-                Container.shared.network.reset(.registration)
                 Container.shared.options.reset(.registration)
+                Container.shared.network.reset(.registration)
                 Container.shared.usermg.reset(.registration)
             }
             Container.shared.manager.reset(scope: .session)

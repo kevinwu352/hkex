@@ -8,7 +8,6 @@
 import SwiftUI
 import Design
 import Factory
-import Auth
 import Home
 import Market
 import Wallet

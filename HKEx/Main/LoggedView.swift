@@ -20,9 +20,9 @@ struct LoggedView: View {
                     switcher.loggedOut()
                 } label: { Image(systemName: "rectangle.portrait.and.arrow.right").padding() }
                 Button {
-                    print( Container.shared.network() )
                     print( Container.shared.router() )
                     print( Container.shared.options() )
+                    print( Container.shared.network() )
                 } label: { Image(systemName: "printer").padding() }
             }
         }
