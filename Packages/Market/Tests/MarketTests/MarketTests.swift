@@ -13,7 +13,7 @@ struct Test {
     @MainActor
     @Test func testPlus() {
         #expect(plus(1, 2) == 3)
-        #expect(plus(2, 2) == 3)
+        #expect(plus(2, 2) == 4)
     }
 
 }
