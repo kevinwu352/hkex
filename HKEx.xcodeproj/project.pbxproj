@@ -12,6 +12,7 @@
 		0A0E59912DC5AF540077A5B2 /* Wallet in Frameworks */ = {isa = PBXBuildFile; productRef = 0A0E59902DC5AF540077A5B2 /* Wallet */; };
 		0A2704B42D9CE94600C5455D /* Design in Frameworks */ = {isa = PBXBuildFile; productRef = 0A2704B32D9CE94600C5455D /* Design */; };
 		0A8108662DCC7148007C74EB /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 0A8108652DCC7148007C74EB /* Factory */; };
+		0AA3D8172E06D15E00AAB0A3 /* Tests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 0AA3D8162E06D15E00AAB0A3 /* Tests.xctestplan */; };
 		0AD38C8A2DC0C32200B1FB6E /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 0AD38C892DC0C32200B1FB6E /* Auth */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		0A1448602E06CCC600866E0B /* HKExTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HKExTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A2613D22D968B8800170662 /* HKEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HKEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AA3D8162E06D15E00AAB0A3 /* Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -92,6 +94,7 @@
 		0A2613C92D968B8800170662 = {
 			isa = PBXGroup;
 			children = (
+				0AA3D8162E06D15E00AAB0A3 /* Tests.xctestplan */,
 				0A2613D42D968B8800170662 /* HKEx */,
 				0A8B55F12D9CDC5E000DCD0D /* Packages */,
 				0A1448612E06CCC600866E0B /* HKExTests */,
@@ -228,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AA3D8172E06D15E00AAB0A3 /* Tests.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

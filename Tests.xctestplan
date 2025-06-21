@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "171EF4DB-D5BC-4A63-A896-BD90E19FF140",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/Market",
+        "identifier" : "MarketTests",
+        "name" : "MarketTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/Wallet",
+        "identifier" : "WalletTests",
+        "name" : "WalletTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:HKEx.xcodeproj",
+        "identifier" : "0A14485F2E06CCC600866E0B",
+        "name" : "HKExTests"
+      }
+    }
+  ],
+  "version" : 1
+}
