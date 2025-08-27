@@ -19,6 +19,6 @@ struct Api: Endpoint {
 extension Api {
     // https://jsonplaceholder.typicode.com/posts
     static func getPosts() -> Self {
-        .init(path: "/v3/d09c8e3b-0247-45d6-8691-e3aeec2087fe", method: .get)
+        .init(path: "/c/15d2-c889-4d9f-a053", method: .get)
     }
 }

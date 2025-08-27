@@ -18,7 +18,7 @@ struct Api: Endpoint {
 
 extension Api {
     static func login() -> Self {
-        .init(path: "/v3/2f5fe564-545b-4ef2-aefd-a0325245f383", method: .get)
+        .init(path: "/c/c1a3-2136-415d-a24d", method: .get)
     }
 }
 

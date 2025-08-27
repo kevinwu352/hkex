@@ -24,7 +24,7 @@ public final class HTTPClient {
 public extension HTTPClient {
     convenience init(token: String? = nil) {
         // print("[life] network init [\(token ?? "")]")
-        let host = "run.mocky.io"
+        let host = "dummyjson.com"
 
         var headers: [String: String] = [:]
         headers["token"] = token
