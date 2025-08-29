@@ -60,7 +60,6 @@ struct WalletView: View {
                     .padding(.trailing)
             }
         )
-        .applyRoute()
     }
 }
 

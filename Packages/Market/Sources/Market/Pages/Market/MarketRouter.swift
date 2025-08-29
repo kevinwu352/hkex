@@ -13,6 +13,7 @@ public struct MarketRouter {
     @MainActor
     public static func createView() -> some View {
         MarketView(vm: .init(provider: MarketProvider()))
+            .applyRoute()
     }
 
 }

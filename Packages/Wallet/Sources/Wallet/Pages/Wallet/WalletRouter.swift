@@ -12,6 +12,7 @@ public struct WalletRouter {
     @MainActor
     public static func createView() -> some View {
         WalletView(vm: .init())
+            .applyRoute()
     }
 
 }

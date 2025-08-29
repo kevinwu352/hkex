@@ -57,7 +57,6 @@ struct MarketView: View {
                     .padding(.trailing)
             }
         )
-        .applyRoute()
     }
 }
 

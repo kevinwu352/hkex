@@ -13,6 +13,7 @@ public struct LoginRouter {
     @MainActor
     public static func createView() -> some View {
         LoginView(vm: .init(provider: LoginProvider()))
+            .applyRoute()
     }
 
 }

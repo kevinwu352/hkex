@@ -42,7 +42,6 @@ struct LoginView: View {
                     .padding(.trailing)
             }
         )
-        .applyRoute()
     }
 }
 
