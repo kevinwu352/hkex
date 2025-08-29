@@ -19,7 +19,7 @@ struct MainView: View {
         @Bindable var router = router
         TabView(selection: $router.current) {
             NavStack(path: $router.homes) {
-                HomeRouter.createView()
+                HomeRouter.createInitial()
                     .applyRoutes()
             }
             .tabItem {
@@ -29,7 +29,7 @@ struct MainView: View {
             .tag(TabBarItem.home)
 
             NavStack(path: $router.markets) {
-                MarketRouter.createView()
+                MarketRouter.createInitial()
                     .applyRoutes()
             }
             .tabItem {
@@ -39,7 +39,7 @@ struct MainView: View {
             .tag(TabBarItem.market)
 
             NavStack(path: $router.wallets) {
-                WalletRouter.createView()
+                WalletRouter.createInitial()
                     .applyRoutes()
             }
             .tabItem {

@@ -23,7 +23,7 @@ struct AppView: View {
                         .transition(.move(edge: .trailing))
                 } else {
                     NavStack {
-                        LoginRouter.createView()
+                        LoginRouter.createInitial()
                     }
                     .transition(.move(edge: .leading))
                 }

@@ -55,6 +55,14 @@ struct SettingsView: View {
                             .background(defaults.language == nil ? Color.yellow : Color.clear)
                     }
                 }
+                HStack {
+                    NavigationLink(value: Routes.settings) {
+                        Image(systemName: "gear").padding()
+                    }
+                    NavigationLink(value: Route.asset(symbol: "BTC")) {
+                        Image(systemName: "bitcoinsign").padding()
+                    }
+                }
             }
         }
         .navBarTitleView(Text("settings_title"))

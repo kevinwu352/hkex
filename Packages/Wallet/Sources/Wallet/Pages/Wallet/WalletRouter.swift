@@ -10,7 +10,7 @@ import SwiftUI
 public struct WalletRouter {
 
     @MainActor
-    public static func createView() -> some View {
+    public static func createInitial() -> some View {
         WalletView(vm: .init())
             .applyRoute()
     }

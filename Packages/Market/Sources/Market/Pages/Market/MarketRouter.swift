@@ -11,7 +11,7 @@ import Design
 public struct MarketRouter {
 
     @MainActor
-    public static func createView() -> some View {
+    public static func createInitial() -> some View {
         MarketView(vm: .init(provider: MarketProvider()))
             .applyRoute()
     }

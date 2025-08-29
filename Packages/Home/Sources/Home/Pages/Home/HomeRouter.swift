@@ -10,7 +10,7 @@ import SwiftUI
 public struct HomeRouter {
 
     @MainActor
-    public static func createView() -> some View {
+    public static func createInitial() -> some View {
         HomeView(vm: .init())
     }
 
