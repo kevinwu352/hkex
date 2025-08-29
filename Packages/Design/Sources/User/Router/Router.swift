@@ -59,6 +59,7 @@ public final class Router {
         guard over3.assign(over, fullscreen: fullscreen) == false else { return }
         guard over4.assign(over, fullscreen: fullscreen) == false else { return }
         guard over5.assign(over, fullscreen: fullscreen) == false else { return }
+        over5.paths.append(over)
     }
 
     public func push<R: Hashable>(_ route: R, tab: TabBarItem? = nil) {
