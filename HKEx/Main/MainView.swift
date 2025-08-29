@@ -13,10 +13,8 @@ import Market
 import Wallet
 
 struct MainView: View {
-    @Injected(\.router) var router
-
     var body: some View {
-        @Bindable var router = router
+        @Bindable var router = Container.shared.router()
         TabView(selection: $router.current) {
             NavStack(path: $router.homes) {
                 HomeRouter.createInitial()
@@ -48,6 +46,8 @@ struct MainView: View {
             }
             .tag(TabBarItem.wallet)
         }
+        .applySheets1()
+        .applyCovers1()
         // .onAppear {
         //     print("main appear")
         // }

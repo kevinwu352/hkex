@@ -7,11 +7,8 @@
 
 import SwiftUI
 
-public enum Routes {
-    // Home
+public enum Routes: Identifiable {
+    public var id: Int { hashValue }
 
-    // Market
-
-    // Wallet
     case settings
 }
