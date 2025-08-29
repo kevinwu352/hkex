@@ -63,6 +63,16 @@ struct SettingsView: View {
                         Image(systemName: "bitcoinsign").padding()
                     }
                 }
+                HStack {
+                    Button {
+                        let router = Container.shared.router()
+                        router.present(.settings, fullscreen: false)
+                    } label: { Image(systemName: "gear").padding() }
+                    Button {
+                        let router = Container.shared.router()
+                        router.present(.settings, fullscreen: true)
+                    } label: { Image(systemName: "gear").padding() }
+                }
             }
         }
         .navBarTitleView(Text("settings_title"))

@@ -33,13 +33,14 @@ public final class Router {
         public var sheet: Routes?
         public var cover: Routes?
         public var paths = NavigationPath()
-        mutating func assign(_ over: Routes, fullscreen: Bool = true) {
-            guard sheet == nil && cover == nil else { return }
+        mutating func assign(_ over: Routes, fullscreen: Bool) -> Bool {
+            guard sheet == nil && cover == nil else { return false }
             if fullscreen {
                 cover = over
             } else {
                 sheet = over
             }
+            return true
         }
         mutating func reset() {
             sheet = nil
@@ -48,8 +49,16 @@ public final class Router {
         }
     }
     public var over1 = Over()
+    public var over2 = Over()
+    public var over3 = Over()
+    public var over4 = Over()
+    public var over5 = Over()
     public func present(_ over: Routes, fullscreen: Bool = true) {
-        over1.assign(over, fullscreen: fullscreen)
+        guard over1.assign(over, fullscreen: fullscreen) == false else { return }
+        guard over2.assign(over, fullscreen: fullscreen) == false else { return }
+        guard over3.assign(over, fullscreen: fullscreen) == false else { return }
+        guard over4.assign(over, fullscreen: fullscreen) == false else { return }
+        guard over5.assign(over, fullscreen: fullscreen) == false else { return }
     }
 
     public func push<R: Hashable>(_ route: R, tab: TabBarItem? = nil) {
