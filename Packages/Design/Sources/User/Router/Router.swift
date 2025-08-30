@@ -30,30 +30,19 @@ public final class Router {
     public var wallets = NavigationPath()
 
     public struct Over {
-        public var sheet: Routes? {
-            didSet {
-                if sheet == nil {
-                    paths = NavigationPath()
-                }
-            }
-        }
-        public var cover: Routes? {
-            didSet {
-                if cover == nil {
-                    paths = NavigationPath()
-                }
-            }
-        }
+        public var sheet: Routes?
+        public var cover: Routes?
         public var paths = NavigationPath()
         public var draggable = true
         @discardableResult
-        mutating func present(_ over: Routes, fullScreen: Bool, draggable: Bool) -> Bool {
+        mutating func present(_ route: Routes, fullScreen: Bool, draggable: Bool) -> Bool {
             if sheet == nil && cover == nil {
+                paths = NavigationPath()
                 self.draggable = draggable
                 if fullScreen {
-                    cover = over
+                    cover = route
                 } else {
-                    sheet = over
+                    sheet = route
                 }
                 return true
             }

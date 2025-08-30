@@ -12,7 +12,6 @@
 		0A0E59912DC5AF540077A5B2 /* Wallet in Frameworks */ = {isa = PBXBuildFile; productRef = 0A0E59902DC5AF540077A5B2 /* Wallet */; };
 		0A2704B42D9CE94600C5455D /* Design in Frameworks */ = {isa = PBXBuildFile; productRef = 0A2704B32D9CE94600C5455D /* Design */; };
 		0A8108662DCC7148007C74EB /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 0A8108652DCC7148007C74EB /* Factory */; };
-		0AA3D8172E06D15E00AAB0A3 /* Tests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 0AA3D8162E06D15E00AAB0A3 /* Tests.xctestplan */; };
 		0AD38C8A2DC0C32200B1FB6E /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 0AD38C892DC0C32200B1FB6E /* Auth */; };
 /* End PBXBuildFile section */
 
@@ -231,7 +230,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AA3D8172E06D15E00AAB0A3 /* Tests.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
