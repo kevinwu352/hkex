@@ -66,7 +66,7 @@ struct SettingsView: View {
                 HStack {
                     Button {
                         let router = Container.shared.router()
-                        router.present(.settings, fullScreen: false)
+                        router.present(.settings, fullScreen: false, draggable: false)
                     } label: { Image(systemName: "gear").padding() }
                     Button {
                         let router = Container.shared.router()

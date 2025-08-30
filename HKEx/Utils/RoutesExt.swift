@@ -41,6 +41,7 @@ extension View {
         @Bindable var router = Container.shared.router()
         return sheet(item: $router.over1.sheet) { route in
             NavStack(path: $router.over1.paths) { route.initial }
+                .interactiveDismissDisabled(!router.over1.draggable)
                 .applySheets2()
                 .applyCovers2()
         }
@@ -49,6 +50,7 @@ extension View {
         @Bindable var router = Container.shared.router()
         return sheet(item: $router.over2.sheet) { route in
             NavStack(path: $router.over2.paths) { route.initial }
+                .interactiveDismissDisabled(!router.over2.draggable)
                 .applySheets3()
                 .applyCovers3()
         }
@@ -57,6 +59,7 @@ extension View {
         @Bindable var router = Container.shared.router()
         return sheet(item: $router.over3.sheet) { route in
             NavStack(path: $router.over3.paths) { route.initial }
+                .interactiveDismissDisabled(!router.over3.draggable)
                 .applySheets4()
                 .applyCovers4()
         }
@@ -65,6 +68,7 @@ extension View {
         @Bindable var router = Container.shared.router()
         return sheet(item: $router.over4.sheet) { route in
             NavStack(path: $router.over4.paths) { route.initial }
+                .interactiveDismissDisabled(!router.over4.draggable)
                 .applySheets5()
                 .applyCovers5()
         }
@@ -73,6 +77,7 @@ extension View {
         @Bindable var router = Container.shared.router()
         return sheet(item: $router.over5.sheet) { route in
             NavStack(path: $router.over5.paths) { route.initial }
+                .interactiveDismissDisabled(!router.over5.draggable)
         }
     }
 }

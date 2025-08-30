@@ -45,9 +45,11 @@ public final class Router {
             }
         }
         public var paths = NavigationPath()
+        public var draggable = true
         @discardableResult
-        mutating func present(_ over: Routes, fullScreen: Bool) -> Bool {
+        mutating func present(_ over: Routes, fullScreen: Bool, draggable: Bool) -> Bool {
             if sheet == nil && cover == nil {
+                self.draggable = draggable
                 if fullScreen {
                     cover = over
                 } else {
@@ -89,12 +91,12 @@ public final class Router {
     public var over4 = Over()
     public var over5 = Over()
 
-    public func present(_ over: Routes, fullScreen: Bool = true) {
-        guard over1.present(over, fullScreen: fullScreen) == false else { return }
-        guard over2.present(over, fullScreen: fullScreen) == false else { return }
-        guard over3.present(over, fullScreen: fullScreen) == false else { return }
-        guard over4.present(over, fullScreen: fullScreen) == false else { return }
-        guard over5.present(over, fullScreen: fullScreen) == false else { return }
+    public func present(_ over: Routes, fullScreen: Bool = false, draggable: Bool = true) {
+        guard over1.present(over, fullScreen: fullScreen, draggable: draggable) == false else { return }
+        guard over2.present(over, fullScreen: fullScreen, draggable: draggable) == false else { return }
+        guard over3.present(over, fullScreen: fullScreen, draggable: draggable) == false else { return }
+        guard over4.present(over, fullScreen: fullScreen, draggable: draggable) == false else { return }
+        guard over5.present(over, fullScreen: fullScreen, draggable: draggable) == false else { return }
         over5.paths.append(over)
     }
 
