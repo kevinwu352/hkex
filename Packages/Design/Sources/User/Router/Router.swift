@@ -33,19 +33,25 @@ public final class Router {
         public var sheet: Routes?
         public var cover: Routes?
         public var paths = NavigationPath()
-        mutating func assign(_ over: Routes, fullscreen: Bool) -> Bool {
-            guard sheet == nil && cover == nil else { return false }
-            if fullscreen {
-                cover = over
-            } else {
-                sheet = over
+        mutating func present(_ over: Routes, fullScreen: Bool) -> Bool {
+            if sheet == nil && cover == nil {
+                if fullScreen {
+                    cover = over
+                } else {
+                    sheet = over
+                }
+                return true
             }
-            return true
+            return false
         }
-        mutating func reset() {
-            sheet = nil
-            cover = nil
-            paths = NavigationPath()
+        mutating func dismiss() -> Bool {
+            if sheet != nil || cover != nil {
+                sheet = nil
+                cover = nil
+                paths = NavigationPath()
+                return true
+            }
+            return false
         }
     }
     public var over1 = Over()
@@ -53,13 +59,18 @@ public final class Router {
     public var over3 = Over()
     public var over4 = Over()
     public var over5 = Over()
-    public func present(_ over: Routes, fullscreen: Bool = true) {
-        guard over1.assign(over, fullscreen: fullscreen) == false else { return }
-        guard over2.assign(over, fullscreen: fullscreen) == false else { return }
-        guard over3.assign(over, fullscreen: fullscreen) == false else { return }
-        guard over4.assign(over, fullscreen: fullscreen) == false else { return }
-        guard over5.assign(over, fullscreen: fullscreen) == false else { return }
+
+    public func present(_ over: Routes, fullScreen: Bool = true) {
+        guard over1.present(over, fullScreen: fullScreen) == false else { return }
+        guard over2.present(over, fullScreen: fullScreen) == false else { return }
+        guard over3.present(over, fullScreen: fullScreen) == false else { return }
+        guard over4.present(over, fullScreen: fullScreen) == false else { return }
+        guard over5.present(over, fullScreen: fullScreen) == false else { return }
         over5.paths.append(over)
+    }
+
+    public func dismiss() {
+
     }
 
     public func push<R: Hashable>(_ route: R, tab: TabBarItem? = nil) {

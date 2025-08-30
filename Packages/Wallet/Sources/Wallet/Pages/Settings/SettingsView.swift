@@ -66,11 +66,11 @@ struct SettingsView: View {
                 HStack {
                     Button {
                         let router = Container.shared.router()
-                        router.present(.settings, fullscreen: false)
+                        router.present(.settings, fullScreen: false)
                     } label: { Image(systemName: "gear").padding() }
                     Button {
                         let router = Container.shared.router()
-                        router.present(.settings, fullscreen: true)
+                        router.present(.settings, fullScreen: true)
                     } label: { Image(systemName: "gear").padding() }
                 }
             }
