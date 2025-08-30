@@ -73,6 +73,16 @@ struct SettingsView: View {
                         router.present(.settings, fullScreen: true)
                     } label: { Image(systemName: "gear").padding() }
                 }
+                HStack {
+                    Button {
+                        let router = Container.shared.router()
+                        // router.push(Route.asset(symbol: "ETH"))
+                        // router.pop()
+                        // router.dismiss()
+                        router.dismissAll()
+                        router.pop(Int.max)
+                    } label: { Image(systemName: "arrowshape.backward").padding() }
+                }
             }
         }
         .navBarTitleView(Text("settings_title"))

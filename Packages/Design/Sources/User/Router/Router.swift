@@ -30,9 +30,22 @@ public final class Router {
     public var wallets = NavigationPath()
 
     public struct Over {
-        public var sheet: Routes?
-        public var cover: Routes?
+        public var sheet: Routes? {
+            didSet {
+                if sheet == nil {
+                    paths = NavigationPath()
+                }
+            }
+        }
+        public var cover: Routes? {
+            didSet {
+                if cover == nil {
+                    paths = NavigationPath()
+                }
+            }
+        }
         public var paths = NavigationPath()
+        @discardableResult
         mutating func present(_ over: Routes, fullScreen: Bool) -> Bool {
             if sheet == nil && cover == nil {
                 if fullScreen {
@@ -44,11 +57,27 @@ public final class Router {
             }
             return false
         }
+        @discardableResult
         mutating func dismiss() -> Bool {
             if sheet != nil || cover != nil {
                 sheet = nil
                 cover = nil
-                paths = NavigationPath()
+                return true
+            }
+            return false
+        }
+        @discardableResult
+        mutating func push<R: Hashable>(_ route: R) -> Bool {
+            if sheet != nil || cover != nil {
+                paths.append(route)
+                return true
+            }
+            return false
+        }
+        @discardableResult
+        mutating func pop(_ count: Int = 1) -> Bool {
+            if sheet != nil || cover != nil {
+                paths.removeLast(min(paths.count, count))
                 return true
             }
             return false
@@ -70,10 +99,26 @@ public final class Router {
     }
 
     public func dismiss() {
-
+        guard over5.dismiss() == false else { return }
+        guard over4.dismiss() == false else { return }
+        guard over3.dismiss() == false else { return }
+        guard over2.dismiss() == false else { return }
+        guard over1.dismiss() == false else { return }
+    }
+    public func dismissAll() {
+        over5.dismiss()
+        over4.dismiss()
+        over3.dismiss()
+        over2.dismiss()
+        over1.dismiss()
     }
 
     public func push<R: Hashable>(_ route: R, tab: TabBarItem? = nil) {
+        guard over5.push(route) == false else { return }
+        guard over4.push(route) == false else { return }
+        guard over3.push(route) == false else { return }
+        guard over2.push(route) == false else { return }
+        guard over1.push(route) == false else { return }
         let tab = tab ?? current
         switch tab {
         case .home:
@@ -86,6 +131,11 @@ public final class Router {
     }
 
     public func pop(_ count: Int = 1, tab: TabBarItem? = nil) {
+        guard over5.pop(count) == false else { return }
+        guard over4.pop(count) == false else { return }
+        guard over3.pop(count) == false else { return }
+        guard over2.pop(count) == false else { return }
+        guard over1.pop(count) == false else { return }
         let tab = tab ?? current
         switch tab {
         case .home:
@@ -94,18 +144,6 @@ public final class Router {
             markets.removeLast(min(markets.count, count))
         case .wallet:
             wallets.removeLast(min(wallets.count, count))
-        }
-    }
-
-    public func popToRoot(tab: TabBarItem? = nil) {
-        let tab = tab ?? current
-        switch tab {
-        case .home:
-            homes.removeLast(homes.count)
-        case .market:
-            markets.removeLast(markets.count)
-        case .wallet:
-            wallets.removeLast(wallets.count)
         }
     }
 
