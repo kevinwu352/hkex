@@ -79,8 +79,8 @@ struct SettingsView: View {
                         // router.push(Route.asset(symbol: "ETH"))
                         // router.pop()
                         // router.dismiss()
-                        router.dismissAll()
-                        router.pop(Int.max)
+                        // router.dismissAll()
+                        // router.pop(Int.max)
                     } label: { Image(systemName: "arrowshape.backward").padding() }
                 }
             }

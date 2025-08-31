@@ -15,6 +15,7 @@ struct MainApp: App {
 #if DEBUG
         print(NSHomeDirectory())
 #endif
+        routesViewHandler = { AnyView($0.view) }
     }
 
     let defaults = Container.shared.defaults()

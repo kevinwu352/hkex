@@ -31,12 +31,6 @@ extension Routes {
 }
 
 extension View {
-    func applyRoutes() -> some View {
-        navDestination(for: Routes.self) { $0.view }
-    }
-}
-
-extension View {
     func applySheets1() -> some View {
         @Bindable var router = Container.shared.router()
         return sheet(item: $router.modal1.sheet) { route in

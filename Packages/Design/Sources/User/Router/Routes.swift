@@ -12,3 +12,12 @@ public enum Routes: Identifiable {
 
     case settings
 }
+
+@MainActor
+public var routesViewHandler: (Routes) -> AnyView = { _ in AnyView(EmptyView()) }
+
+public extension View {
+    func applyRoutes() -> some View {
+        navDestination(for: Routes.self) { routesViewHandler($0) }
+    }
+}
