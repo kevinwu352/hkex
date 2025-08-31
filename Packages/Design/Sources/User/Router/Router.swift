@@ -29,87 +29,42 @@ public final class Router {
     public var markets = NavigationPath()
     public var wallets = NavigationPath()
 
-    public struct Over {
-        public var sheet: Routes?
-        public var cover: Routes?
-        public var paths = NavigationPath()
-        public var draggable = true
-        @discardableResult
-        mutating func present(_ route: Routes, fullScreen: Bool, draggable: Bool) -> Bool {
-            if sheet == nil && cover == nil {
-                paths = NavigationPath()
-                self.draggable = draggable
-                if fullScreen {
-                    cover = route
-                } else {
-                    sheet = route
-                }
-                return true
-            }
-            return false
-        }
-        @discardableResult
-        mutating func dismiss() -> Bool {
-            if sheet != nil || cover != nil {
-                sheet = nil
-                cover = nil
-                return true
-            }
-            return false
-        }
-        @discardableResult
-        mutating func push<R: Hashable>(_ route: R) -> Bool {
-            if sheet != nil || cover != nil {
-                paths.append(route)
-                return true
-            }
-            return false
-        }
-        @discardableResult
-        mutating func pop(_ count: Int = 1) -> Bool {
-            if sheet != nil || cover != nil {
-                paths.removeLast(min(paths.count, count))
-                return true
-            }
-            return false
-        }
-    }
-    public var over1 = Over()
-    public var over2 = Over()
-    public var over3 = Over()
-    public var over4 = Over()
-    public var over5 = Over()
+    public var modal1 = Modal<Routes>()
+    public var modal2 = Modal<Routes>()
+    public var modal3 = Modal<Routes>()
+    public var modal4 = Modal<Routes>()
+    public var modal5 = Modal<Routes>()
 
-    public func present(_ over: Routes, fullScreen: Bool = false, draggable: Bool = true) {
-        guard over1.present(over, fullScreen: fullScreen, draggable: draggable) == false else { return }
-        guard over2.present(over, fullScreen: fullScreen, draggable: draggable) == false else { return }
-        guard over3.present(over, fullScreen: fullScreen, draggable: draggable) == false else { return }
-        guard over4.present(over, fullScreen: fullScreen, draggable: draggable) == false else { return }
-        guard over5.present(over, fullScreen: fullScreen, draggable: draggable) == false else { return }
-        over5.paths.append(over)
+    public func present(_ route: Routes, fullScreen: Bool = false, isDraggable: Bool = true) {
+        guard modal1.present(route, fullScreen: fullScreen, isDraggable: isDraggable) == false else { return }
+        guard modal2.present(route, fullScreen: fullScreen, isDraggable: isDraggable) == false else { return }
+        guard modal3.present(route, fullScreen: fullScreen, isDraggable: isDraggable) == false else { return }
+        guard modal4.present(route, fullScreen: fullScreen, isDraggable: isDraggable) == false else { return }
+        guard modal5.present(route, fullScreen: fullScreen, isDraggable: isDraggable) == false else { return }
+        modal5.paths.append(route)
     }
 
     public func dismiss() {
-        guard over5.dismiss() == false else { return }
-        guard over4.dismiss() == false else { return }
-        guard over3.dismiss() == false else { return }
-        guard over2.dismiss() == false else { return }
-        guard over1.dismiss() == false else { return }
+        guard modal5.dismiss() == false else { return }
+        guard modal4.dismiss() == false else { return }
+        guard modal3.dismiss() == false else { return }
+        guard modal2.dismiss() == false else { return }
+        guard modal1.dismiss() == false else { return }
     }
     public func dismissAll() {
-        over5.dismiss()
-        over4.dismiss()
-        over3.dismiss()
-        over2.dismiss()
-        over1.dismiss()
+        modal5.dismiss()
+        modal4.dismiss()
+        modal3.dismiss()
+        modal2.dismiss()
+        modal1.dismiss()
     }
 
     public func push<R: Hashable>(_ route: R, tab: TabBarItem? = nil) {
-        guard over5.push(route) == false else { return }
-        guard over4.push(route) == false else { return }
-        guard over3.push(route) == false else { return }
-        guard over2.push(route) == false else { return }
-        guard over1.push(route) == false else { return }
+        guard modal5.push(route) == false else { return }
+        guard modal4.push(route) == false else { return }
+        guard modal3.push(route) == false else { return }
+        guard modal2.push(route) == false else { return }
+        guard modal1.push(route) == false else { return }
         let tab = tab ?? current
         switch tab {
         case .home:
@@ -122,11 +77,11 @@ public final class Router {
     }
 
     public func pop(_ count: Int = 1, tab: TabBarItem? = nil) {
-        guard over5.pop(count) == false else { return }
-        guard over4.pop(count) == false else { return }
-        guard over3.pop(count) == false else { return }
-        guard over2.pop(count) == false else { return }
-        guard over1.pop(count) == false else { return }
+        guard modal5.pop(count) == false else { return }
+        guard modal4.pop(count) == false else { return }
+        guard modal3.pop(count) == false else { return }
+        guard modal2.pop(count) == false else { return }
+        guard modal1.pop(count) == false else { return }
         let tab = tab ?? current
         switch tab {
         case .home:
