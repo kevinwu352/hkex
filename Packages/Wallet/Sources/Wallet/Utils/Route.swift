@@ -6,25 +6,24 @@
 //
 
 import SwiftUI
+import Design
 
 enum Route: Hashable {
     case asset(symbol: String)
 }
 
-struct ApplyRouteViewModifier: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .navDestination(for: Route.self) { route in
-                switch route {
-                case let .asset(symbol):
-                    AssetRouter.createView(symbol: symbol)
-                }
-            }
+extension Route {
+    @MainActor
+    var view: some View {
+        switch self {
+        case let .asset(symbol):
+            AssetRouter.createView(symbol: symbol)
+        }
     }
 }
 
 extension View {
     func applyRoute() -> some View {
-        modifier(ApplyRouteViewModifier())
+        navDestination(for: Route.self) { $0.view }
     }
 }

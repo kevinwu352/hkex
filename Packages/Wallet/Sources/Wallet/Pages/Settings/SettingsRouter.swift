@@ -10,14 +10,14 @@ import SwiftUI
 public struct SettingsRouter {
 
     @MainActor
-    public static func createInitial() -> some View {
+    public static func createView() -> some View {
         SettingsView()
-            .applyRoute()
     }
 
     @MainActor
-    public static func createView() -> some View {
+    public static func createInitial() -> some View {
         SettingsView()
+            .applyRoute()
     }
 
 }
