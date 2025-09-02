@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-public let kNavBarHeight = 44.0
-
 struct NavBar: View {
     @Environment(\.dismiss) var dismiss
 
@@ -39,7 +37,7 @@ struct NavBar: View {
                     } label: {
                         Image(systemName: "chevron.left")
                     }
-                    .frame(height: kNavBarHeight - 4)
+                    .frame(height: kNavBarH - 4)
                     .padding(.horizontal)
                     // .background(Color.yellow)
                 }
@@ -49,7 +47,7 @@ struct NavBar: View {
                 }
             }
         }
-        .frame(height: kNavBarHeight)
+        .frame(height: kNavBarH)
         .foregroundStyle(Color.navbarFg)
         .background(Color.navbarBg)
         .font(.title3)

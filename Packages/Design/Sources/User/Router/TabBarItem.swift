@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-public let kTabBarHeight = 49.0
-
 public enum TabBarItem: Hashable {
     case home
     case market
